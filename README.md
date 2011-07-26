@@ -65,6 +65,9 @@ Of course you'll also need Java 7.
 Simply run `gradle test` from the project directory to run the Grizzly HTTP server. It will appear to "hang", which
 is simply the test thread blocking while you hit the server with requests.
 
+Issue a PUT to `http://127.0.0.1:8080/some/path/to/a/file`, which will store the file locally in a files called
+`upload/incoming` (you will want to `mkdir upload` from both the project directory and the `src/main/nodejs` directory).
+
 To run the Node.js version, cd into `src/main/nodejs` and do `node server.js`. Same thing there. The command shell
 will block while you do the testing.
 
