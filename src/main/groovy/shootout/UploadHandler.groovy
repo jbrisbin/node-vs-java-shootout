@@ -104,8 +104,6 @@ class UploadHandler extends HttpHandler {
 					completionHandler.set(attrs, handler)
 				}
 
-//				def inputStreamBuffer = inputStream.getBuffer()
-//				def byteBuff = inputStreamBuffer.toByteBuffer()
 				inputStream.notifyAvailable(new ReadHandler() {
 					@Override void onDataAvailable() {
 						readAvailable()
@@ -122,31 +120,17 @@ class UploadHandler extends HttpHandler {
 					}
 
 					def readAvailable() {
-//						def pos = inputStreamBuffer.position()
 						def len = inputStream.readyData()
-//						def buff = ByteBuffer.allocateDirect(len)
+						// TODO: Remove this buffer copy
 						byte[] b = new byte[len]
 						inputStream.read(b)
 						channel.write(ByteBuffer.wrap(b), bytes.get(), b, handler)
 						bytes.addAndGet(len)
-//						inputStreamBuffer.position(pos)
-//						inputStream.skip(len)
 					}
 				}, BUFFER_SIZE)
 
 				break
 		}
-
-	}
-
-	class WriteData {
-		byte[] data
-		boolean atEnd = false
-
-		@Override String toString() {
-			return "data=(${data.length} bytes), atEnd=$atEnd"
-		}
-
 
 	}
 

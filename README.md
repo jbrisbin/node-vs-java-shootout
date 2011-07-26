@@ -37,7 +37,7 @@ This test was uploading a 1MB file 10 times with 1 concurrent user.
     Requests per second:    129.06 [#/sec] (mean)
     Time per request:       7.748 [ms] (mean)
 
-## An your point?
+## And your point?
 
 Moral of the story is that JVM-powered applications *can be* as fast as Node.js applications. It's not a
 given that simply writing using Node.js as an application platform will automagically give you better
