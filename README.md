@@ -3,7 +3,7 @@
 I created this small project to encapsulate a single use case: uploading files (50, 100, 1000MB). There is a Node.js
 and a Groovy (using the Grizzly NIO framework) version.
 
-The Groovy version outperforms the Node.js version by a factor of 10 in the first test. This is because the
+The Groovy version outperforms the Node.js version by a factor of 14 in the first test. This is because the
 MD5 algorithm in Node.js is inefficient. If we comment out this call to make it as fast as possible, then the
 Groovy version outperforms the Node.js version 40ms.
 
