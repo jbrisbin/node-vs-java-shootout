@@ -10,7 +10,6 @@ import java.security.MessageDigest
 import java.util.concurrent.Executors
 import java.util.concurrent.atomic.AtomicLong
 import org.apache.commons.codec.binary.Base64
-import org.codehaus.jackson.map.ObjectMapper
 import org.glassfish.grizzly.Grizzly
 import org.glassfish.grizzly.http.Method
 import org.glassfish.grizzly.http.server.HttpHandler
@@ -23,7 +22,6 @@ import org.slf4j.LoggerFactory
 class UploadHandler extends HttpHandler {
 
 	def log = LoggerFactory.getLogger(getClass())
-	def mapper = new ObjectMapper()
 	def BUFFER_SIZE = 512000
 	def headerProcessed = Grizzly.DEFAULT_ATTRIBUTE_BUILDER.createAttribute("header-processed")
 	def activeChannel = Grizzly.DEFAULT_ATTRIBUTE_BUILDER.createAttribute("active-channel")

@@ -12,7 +12,6 @@ repositories {
 	mavenRepo(name: "glassfish", urls: "http://download.java.net/maven/glassfish/")
 	mavenRepo(name: "java.net", urls: "http://download.java.net/maven/2")
 	mavenRepo(name: "codehaus", urls: "http://snapshots.repository.codehaus.org")
-	mavenRepo(name: "Spring Milestone", urls: "http://maven.springframework.org/milestone")
 }
 
 dependencies {
@@ -32,12 +31,7 @@ dependencies {
 	// Grizzly
 	compile "org.glassfish.grizzly:grizzly-http:$grizzlyVersion"
 	compile "org.glassfish.grizzly:grizzly-http-server:$grizzlyVersion"
-	compile "org.glassfish.grizzly:grizzly-http-server-multipart:$grizzlyVersion"
 	compile "org.glassfish.gmbal:gmbal:3.0.0-b023"
-
-	// Jackson
-	compile "org.codehaus.jackson:jackson-core-asl:$jacksonVersion"
-	compile "org.codehaus.jackson:jackson-mapper-asl:$jacksonVersion"
 
 	// Commons
 	compile "commons-codec:commons-codec:1.5"
